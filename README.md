@@ -23,6 +23,12 @@ Xgboost: 0.2
 Lighgbm: 0.15
 ```
 
+To train run ```python3 stacked_regressor.py``` passing **-p** argument indicating the path to the CSV file. Ex:
+
+```
+python3 stacked_regressor.py -p path.csv
+```
+
 The logs will be saved in ```logs/stacked_regressor``` folder.
 
 ## Xgboost Classifier
@@ -31,7 +37,15 @@ The xgboost models is made to make categorical predictions. There is no needed t
 
 Pay attetion there is no feature engineering. The only thing made is the label encoding. Any column that has categorical data will be changed to numerical data.
 
+Also, note that stratified cross validation will be performed by the algorithm and 10 models will be save for later usage. 
+
 The code itself is made to classify two or more labels. Feel free to change the params in ```config/__init__.py``` file.
+
+To train run ```python3 xgb_classifier_cv.py``` passing **-p** argument indicating the path to the CSV file. Ex:
+
+```
+python3 xgb_classifier_cv.py -p path.csv
+```
 
 The logs will be save in ```logs/xgb_classifier``` folder.
 
